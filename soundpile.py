@@ -10,6 +10,8 @@ import random
 
 from PIL import Image, ImageTk
 
+app=None
+
 class App(ttk.Frame):
     def __init__(self, master=None, path="./"):
         ttk.Frame.__init__(self, master, padding=5)
@@ -90,7 +92,7 @@ class App(ttk.Frame):
     def selection_changed(self, _=None):
         self.filepreview.open_file(self.filelist.focus())
 
-    def open(self, _):
+    def open(self, _=None):
         if self.filelist.focus() == "BACK UP":
             print("ok!")
             path = pathlib.Path(self.path)
@@ -132,11 +134,16 @@ class App(ttk.Frame):
             if assets.is_audio(ext): image = self.icon_audio
             self.filelist.insert("", "end", iid=path[0], text=path[1], image=image)
 
+def keyhandler(event):
+    if event.keysym=="Return":
+        app.open()
 
 if __name__=="__main__":
     root = tk.Tk()
     root.geometry('640x480')
     root.tk.call("wm", "iconphoto", root._w, tk.PhotoImage(file="res/sound.png"))
+
+    root.bind("<Key>", keyhandler)
 
     # ('winnative', 'clam', 'alt', 'default', 'classic', 'vista', 'xpnative')
     s = ttk.Style()
