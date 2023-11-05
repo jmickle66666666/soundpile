@@ -2,11 +2,11 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import filedialog
 import os
-import pygame
 import pathlib
 from previewer import *
 import assets
 import random
+import snd
 
 from PIL import Image, ImageTk
 
@@ -152,7 +152,7 @@ if __name__=="__main__":
     root.rowconfigure(0, weight=1)
     root.columnconfigure(0, weight=1)
 
-    pygame.mixer.init()
+    snd.init()
 
     app = App()
     app.master.title("SOUNDPILE")

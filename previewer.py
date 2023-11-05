@@ -1,9 +1,9 @@
 import tkinter as tk
 from tkinter import ttk
 import os
-import pygame
 import pathlib
 import assets
+import snd
 
 class Previewer(ttk.Frame):
     def __init__(self, master=None):
@@ -60,6 +60,6 @@ class Previewer(ttk.Frame):
             self.image_view["file"] = path
 
         if assets.is_audio(ext):
-            self.sound = pygame.mixer.Sound(path)
+            self.sound = snd.Sound(path)
             self.playsound()
 
