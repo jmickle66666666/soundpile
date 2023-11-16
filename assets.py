@@ -6,10 +6,10 @@ types = {
 }
 
 def is_audio(ext):
-    return ext in types["audio"]
+    return ext.lower() in types["audio"]
 
 def is_image(ext):
-    return ext in types["image"]
+    return ext.lower in types["image"]
 
 def is_supported(ext):
     return is_audio(ext) or is_image(ext)

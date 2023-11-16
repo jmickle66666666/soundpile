@@ -120,7 +120,10 @@ class App(ttk.Frame):
                 if os.path.isdir(self.path + path):
                     dir_paths.append((self.path + path, path))
                 else:
-                    file_paths.append((self.path + path, path))
+
+                    _, ext = os.path.splitext(path)
+                    if assets.is_audio(ext) or assets.is_image(ext):
+                        file_paths.append((self.path + path, path))
 
         self.filelist.insert("", "end", iid="BACK UP", text="..")
 
