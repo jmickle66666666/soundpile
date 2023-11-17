@@ -1,5 +1,4 @@
-Pillow==10.1.0
+Pillow==10.0.0
 Pillow==10.1.0
 pipreqs==0.4.13
-pygame==2.5.2
-pyinstaller==6.1.0
+pyinstaller==5.6.1

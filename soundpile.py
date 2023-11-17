@@ -160,3 +160,9 @@ if __name__=="__main__":
     app = App()
     app.master.title("SOUNDPILE")
     app.mainloop()
+
+    if os.path.exists("temp.wav"):
+        os.remove("temp.wav")
+
+    if os.path.exists("temp.png"):
+        os.remove("temp.png")

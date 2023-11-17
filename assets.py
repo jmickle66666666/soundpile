@@ -2,11 +2,15 @@
 
 types = {
     "image": [".png", ".jpg"],
-    "audio": [".mp3", ".wav", ".ogg", ".flac"]
+    "audio": [".mp3", ".wav", ".ogg", ".flac"],
+    "wav" : [".wav"]
 }
 
 def is_audio(ext):
     return ext.lower() in types["audio"]
+
+def is_wav(ext):
+    return ext.lower() in types["wav"]
 
 def is_image(ext):
     return ext.lower in types["image"]
